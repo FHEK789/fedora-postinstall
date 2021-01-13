@@ -6,3 +6,4 @@ htop
 kdevelop
 kaccounts-providers
 kio-gdrive
+qbittorrent
