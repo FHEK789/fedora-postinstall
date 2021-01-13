@@ -7,3 +7,4 @@ kdevelop
 kaccounts-providers
 kio-gdrive
 qbittorrent
+vlc
