@@ -1,10 +1,8 @@
 zsh
 libreoffice-writer
 code
-kate
 htop
 kdevelop
-kaccounts-providers
 kio-gdrive
 qbittorrent
 vlc
