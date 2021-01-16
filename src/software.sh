@@ -12,12 +12,12 @@ echo "${RED}--- REMOVING PACKAGES ---${RESTORE}"
 echo
 
 for package_name in ${REMOVE_LIST[@]}; do
-	if ! sudo dnf list --installed | grep -q "^\<$package_name\>"; then
+	if ! sudo zypper packages --installed-only | grep -q "^\<$package_name\>"; then
 		echo "${RED}[UNINSTALLED]${RESTORE} - $package_name"
 	else
 		echo "removing $package_name..."
 		sleep 0.25
-		sudo dnf remove "$package_name" -yq
+		sudo zypper -q remove -y "$package_name"
 		echo "${RED}[UNINSTALLED]${RESTORE} - $package_name"
 	fi
 done
@@ -27,10 +27,10 @@ echo "${GREEN}--- INSTALLING PACKAGES ---${RESTORE}"
 echo
 
 for package_name in ${INSTALL_LIST[@]}; do
-	if ! sudo dnf list --installed | grep -q "^\<$package_name\>"; then
+	if ! sudo zypper packages --installed-only | grep -q "^\<$package_name\>"; then
 		echo "installing $package_name..."
 		sleep 0.25
-		sudo dnf install "$package_name" -yq
+		sudo zypper -q install -y "$package_name"
 		echo "${GREEN}[INSTALLED]${RESTORE} - $package_name"
 	else
 		echo "${GREEN}[INSTALLED]${RESTORE} - $package_name"
