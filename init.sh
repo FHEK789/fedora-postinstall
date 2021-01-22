@@ -14,10 +14,3 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 chsh -s /usr/bin/zsh
 
 sudo zypper dup
-
-mkdir $HOME/www
-
-# run get-config script
-git clone https://github.com/fhek789/get-config.git $HOME/www/shell/get-config
-cd $HOME/www/shell/get-config
-./init.sh
