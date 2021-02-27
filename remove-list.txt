@@ -1,6 +1,7 @@
 skanlite
 git-gui
 kompare
+kmag
 konversation
 tigervnc
 xterm

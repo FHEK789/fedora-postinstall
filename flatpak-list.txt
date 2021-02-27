@@ -1,2 +1,2 @@
-org.mozilla.Thunderbird
 com.discordapp.Discord
+com.spotify.Client
