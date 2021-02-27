@@ -1,0 +1,6 @@
+skanlite
+git-gui
+kompare
+konversation
+tigervnc
+xterm
