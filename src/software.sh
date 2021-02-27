@@ -12,7 +12,7 @@ echo "${RED}--- REMOVING PACKAGES ---${RESTORE}"
 echo
 
 for package_name in ${REMOVE_LIST[@]}; do
-	if ! sudo zypper packages --installed-only | grep -q "^\<$package_name\>"; then
+	if ! sudo zypper packages --installed-only | grep -qw "$package_name"; then
 		echo "${RED}[UNINSTALLED]${RESTORE} - $package_name"
 	else
 		echo "removing $package_name..."
@@ -27,7 +27,7 @@ echo "${GREEN}--- INSTALLING PACKAGES ---${RESTORE}"
 echo
 
 for package_name in ${INSTALL_LIST[@]}; do
-	if ! sudo zypper packages --installed-only | grep -q "^\<$package_name\>"; then
+	if ! sudo zypper packages --installed-only | grep -qw "$package_name"; then
 		echo "installing $package_name..."
 		sleep 0.25
 		sudo zypper -q install -y "$package_name"
@@ -42,7 +42,7 @@ echo "${GREEN}--- INSTALLING FLATPAKS ---${RESTORE}"
 echo
 
 for flatpak_name in ${FLATPAK_LIST[@]}; do
-	if ! flatpak list | grep -q $flatpak_name; then
+	if ! flatpak list | grep -qw "$flatpak_name"; then
 		echo "installing $flatpak_name..."
 		sleep 0.25
 		flatpak install "$flatpak_name" -y --noninteractive
