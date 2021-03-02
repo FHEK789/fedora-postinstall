@@ -14,5 +14,3 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 ./src/software.sh
 
 chsh -s /usr/bin/zsh
-
-sudo zypper dup
