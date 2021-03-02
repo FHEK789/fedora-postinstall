@@ -5,6 +5,8 @@ zypper ar -cfp 90 https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbl
 
 sudo zypper dup --from packman --allow-vendor-change
 
+sudo zypper addrepo --refresh https://download.nvidia.com/opensuse/tumbleweed NVIDIA
+
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 ./src/add-repositories.sh
